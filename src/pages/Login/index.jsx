@@ -1,10 +1,12 @@
 import './login.css'
 import { LoginMock } from '../../services/LoginMock'
 import { useState } from 'react'
+import { Navigate } from 'react-router-dom';
 
 export default function Login() {
 
     // Préparation des champs du formulaire
+    const [redirect, setRedirect] = useState(false);
     const [form, setForm] = useState({
         username: "",
         password: ""
@@ -26,7 +28,7 @@ export default function Login() {
         event.preventDefault();
 
         // Appel de la fonction de login
-        const {succes, error, user} = LoginMock(form.username, form.password);
+        const {succes, error} = LoginMock(form.username, form.password);
 
         // Si login échoué, récupération du message d'erreur
         if(!succes) {
@@ -34,9 +36,17 @@ export default function Login() {
             return;
         }
 
-        // Redirection future vers dashboard
-            console.log("Utilisateur connecté :", user);
-        }
+        setRedirect(true);
+    }
+
+    // Redirection vers le dashboard utilisateur
+
+
+    if(redirect) {
+        return (
+            <Navigate to="/dashboard" replace />
+        )
+    }
 
 
     return (
