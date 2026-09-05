@@ -1,0 +1,58 @@
+import './login.css'
+import { LoginMock } from '../../services/LoginMock'
+import { useState } from 'react'
+
+export default function Login() {
+
+    // Préparation des champs du formulaire
+    const [form, setForm] = useState({
+        username: "",
+        password: ""
+    });
+
+    // Préparation d'un champ erreur
+    const [error, setError] = useState("");
+
+    // Nettoyage des données saisies
+    function handleChange(event) {
+        setForm({
+            ...form,
+            [event.target.id]: event.target.value.trim() 
+        });
+    }
+
+    // Envoi des données
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        // Appel de la fonction de login
+        const {succes, error, user} = LoginMock(form.username, form.password);
+
+        // Si login échoué, récupération du message d'erreur
+        if(!succes) {
+            setError(error);
+            return;
+        }
+
+        // Redirection future vers dashboard
+            console.log("Utilisateur connecté :", user);
+        }
+
+
+    return (
+        <div className="login-container">
+            <form onSubmit={handleSubmit} method="POST" className="login-form">
+                <h3>Transformer vos stats en résultats</h3>
+                <h4>Se connecter</h4>
+                <label htmlFor="username">Nom d'utilisateur :</label>
+                <input id="username" value={form.username} onChange={handleChange} />
+                <label htmlFor="password">Mot de passe :</label>
+                <input type="password" id="password" value={form.password} onChange={handleChange}/>
+                    {error && <p style={{ color: "red" }}>{error}</p>}
+                <button type="submit">Se connecter</button>
+                <a href="/forgot-password">Mot de passe oublié ?</a>
+            </form>
+            <img src="/background_picture.png" alt="" className="background-image" />
+        </div>
+    );
+}

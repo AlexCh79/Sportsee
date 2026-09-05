@@ -1,0 +1,11 @@
+.header-profile {
+    width: 1052px;
+    height: 181px;
+}
+
+.profile-image {
+    width: 104px;
+    height: 117px;
+    object-fit: cover;
+    border-radius: 10px;
+}

@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 100px;
+}
+
+ul, li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-left {
+    gap: 9px;
+}
+
+.footer-right {
+    gap: 16px;
+}
+
+.footer-icon {
+    transition: transform 1ms ease-in-out;
+    transition-duration: 2000ms;
+}

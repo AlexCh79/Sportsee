@@ -1,6 +1,8 @@
-const dataMock = [
+export const userMock = [
     {
         id: "user123",
+        username: "sophiemartin",
+        password: "password123",
         profile: {
             firstName: "Sophie",
             lastName: "Martin",
@@ -18,6 +20,8 @@ const dataMock = [
     },
     {
         id: "user789",
+        username: "emmaleroy",
+        password: "password789",        
         profile: {
             firstName: "Emma",
             lastName: "Leroy",
@@ -35,6 +39,8 @@ const dataMock = [
     },
     {
         id: "user456",
+        username: "marcdubois",
+        password: "password456",        
         profile: {
             firstName: "Marc",
             lastName: "Dubois",

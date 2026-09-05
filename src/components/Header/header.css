@@ -1,0 +1,28 @@
+.header div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border-radius: 40px;
+    padding: 4px 8px;
+    background-color: grey;
+    color: black;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.nav-link.active {
+    color: #0B23F4;
+}

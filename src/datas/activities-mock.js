@@ -1,4 +1,4 @@
-const activitiesMock = [
+export const activitiesMock = [
         {
             id: "user123", 
             activities: [
