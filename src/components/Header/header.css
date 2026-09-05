@@ -13,16 +13,38 @@
     gap: 20px;
     border-radius: 40px;
     padding: 4px 8px;
-    background-color: grey;
+    background-color: #FFFFFFE5;
     color: black;
+    justify-content: center;
+    align-items: center;
+    width: 461px;
+    height: 49px;
+    margin: 16px 48px;
+    gap: 10px;
 }
 
 .nav-link {
     text-decoration: none;
     color: black;
     padding: 10px;
+    margin: 0;
+    vertical-align: middle;
+    min-width: fit-content;
 }
 
-.nav-link.active {
+.nav-link.active, .logout {
     color: #0B23F4;
+}
+
+.nav-left {
+    border-right: 0.5px solid #0B23F4;
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+    height: 17px;
+    margin-right: 40px;
+    padding: 0 40px;
+    color: #111111;
+    font-size: 14px;
+    font-width: 400;
 }

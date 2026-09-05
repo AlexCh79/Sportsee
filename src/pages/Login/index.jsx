@@ -51,18 +51,21 @@ export default function Login() {
 
     return (
         <div className="login-container">
-            <form onSubmit={handleSubmit} method="POST" className="login-form">
-                <h3>Transformer vos stats en résultats</h3>
-                <h4>Se connecter</h4>
-                <label htmlFor="username">Nom d'utilisateur :</label>
-                <input id="username" value={form.username} onChange={handleChange} />
-                <label htmlFor="password">Mot de passe :</label>
-                <input type="password" id="password" value={form.password} onChange={handleChange}/>
-                    {error && <p style={{ color: "red" }}>{error}</p>}
-                <button type="submit">Se connecter</button>
-                <a href="/forgot-password">Mot de passe oublié ?</a>
-            </form>
-            <img src="/background_picture.png" alt="" className="background-image" />
+            <div className='left-column'>
+                <form onSubmit={handleSubmit} method="POST" className="login-form">
+                    <h3>Transformer vos stats en résultats</h3>
+                    <h4>Se connecter</h4>
+                    <label htmlFor="username">Nom d'utilisateur :</label>
+                    <input id="username" value={form.username} onChange={handleChange} />
+                    <label htmlFor="password">Mot de passe :</label>
+                    <input type="password" id="password" value={form.password} onChange={handleChange}/>
+                        {error && <p style={{ color: "red" }}>{error}</p>}
+                    <button type="submit">Se connecter</button>
+                    <a href="/forgot-password">Mot de passe oublié ?</a>
+                </form>
+            </div>
+                <img src="/background_picture.png" alt="" className="background-image" />
+                <p className='floating-text'>Analysez vos performances en un clin d’œil, suivez vos progrès et atteignez vos objectifs.</p>
         </div>
     );
 }

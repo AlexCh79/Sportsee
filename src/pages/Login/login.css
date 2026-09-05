@@ -13,10 +13,38 @@
     border-radius: 20px;
     margin: 40px 40px 80px 40px;
     padding: 40px;
-    gap: 40px;
     background-color: #ffffff;
     width: 398px;
     height: 617px;
+    gap: 20px;
+}
+
+.left-column {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 151px;
+    width: 632px;
+    height: 1024px;
+}
+
+.floating-text {
+    position: absolute;
+    top: 933px;
+    left: 1128px;
+    max-width: 288px;
+    max-height: 62px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50px;
+    background-color: #FFFFFF;
+    margin: 16px;
+    padding: 10px;
+    color: var(--dark-blue);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 400;
 }
 
 .background-image {
@@ -29,17 +57,14 @@ input {
   border-radius: 10px;
   border: 0.5px solid #717171;
   background-color: #ffffff;
-  width: 317px;
+  width: 297px;
   height: 58px;
   padding: 10px;
+  margin-left: 40px;
 }
 
 input:focus, input:active {
-  border: 0.5px solid #0B23F4;
-}
-
-.nav-bar {
-    display: none;
+  outline-color: #0B23F4;
 }
 
 button {
@@ -49,8 +74,9 @@ button {
     color: #ffffff;
     width: 318px;
     height: 51px;
-    padding: 10px;
+    padding: 20px 10px;
     margin: 16px 40px;
+    font-size: 16px;
 }&:active {
     transition: ease-in 300ms;
 }
@@ -58,9 +84,17 @@ button {
 h3 {
     color: var(--dark-blue);
     text-align: left;
-    padding-left: 20px;
+    margin-left: 40px;
+}
+
+h4, a {
+    margin-left: 40px;
+    color: #111111;
+    text-decoration: none;
 }
 
 label {
     color: #707070;
+    margin-left: 40px;
 }
+
