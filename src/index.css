@@ -1,0 +1,37 @@
+:root {
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+  background-color: #F2F3FF;
+  --dark-blue: #0B23F4;
+  --light-blue: #5465F7;
+  --grey: #E7E7E7;
+}
+
+body {
+  width: 1440px;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+button:hover {
+  cursor: pointer;
+}
