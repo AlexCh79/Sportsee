@@ -1,0 +1,28 @@
+header {
+    margin: 35px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFFE5;
+    border: none;
+    border-radius: 40px;
+    padding: 16px 48px;
+}
+
+.left-nav-bar {
+    display: flex;
+    gap: 40px;
+    border-right: 0.5px solid #0B23F4;
+    padding-right: 40px;
+}
+
+.right-nav-bar {
+    color: #0B23F4;
+    padding-left: 40px;
+}

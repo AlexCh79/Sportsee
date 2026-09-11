@@ -19,6 +19,7 @@ function Login() {
             </div>
             <div className="background-container">
                 <img src="/background_picture.png" alt="" />
+                <p className='float'>Analysez vos performances en un clin d’œil, suivez vos progrès et atteignez vos objectifs.</p>
             </div>
         </div>
     )

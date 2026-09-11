@@ -1,0 +1,22 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    max-height: 40.66px;
+    max-width: 100%;
+    width: 1440px;
+    height: 40.66px;
+    padding: 10px 100px;
+    vertical-align: middle;
+}
+
+.left-footer {
+    display: flex;
+    gap: 9px;
+}
+
+.right-footer {
+    display: flex;
+    gap: 16px;
+}

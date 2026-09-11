@@ -35,3 +35,11 @@ h4 {
 button:hover {
   cursor: pointer;
 }
+
+.icon {
+  width: fit-content;
+  max-width: 19px;
+  height: fit-content;
+  max-height: 20.66px;
+  padding: 5px;
+}
