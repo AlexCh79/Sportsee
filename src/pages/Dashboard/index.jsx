@@ -85,7 +85,7 @@ function Dashboard() {
                 </div>
 
                 <h4 className='perform-title'>Cette semaine</h4>
-                <span className='week'>du au </span>
+                <span className='week'>du  au  </span>
             </div>
 
 

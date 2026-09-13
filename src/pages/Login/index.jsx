@@ -30,8 +30,9 @@ function Login() {
     }
 
     return (
-        <div className="login">
+        <div className="login">            
             <div className="left-column">
+                <img alt='logo' src='/logo.png' className='logo' />
                 <div className="form-container">
                     <form className="login-form" onSubmit={handleSubmit}>
                         <h3>Transformez vos stats en résultats</h3>

@@ -11,7 +11,7 @@
     height: 1024px;
     max-width: 632px;
     max-height: 1024px;
-    padding: 0;
+    padding: 50px 0;
     place-items: center;
     right: 0;
 }
@@ -95,10 +95,6 @@ button {
     }
 }
 
-.nav-bar {
-    display: none;
-}
-
 .float {
     background-color: #FFFFFF;
     font-size: 12px;
@@ -118,12 +114,14 @@ button {
     text-align: center;
 }
 
-footer {
-    display: none;
-}
-
 .error-message {
     color: #E03131;
     font-size: 13px;
     margin: -10px 0 0 0;
+}
+
+.logo {
+    justify-self: left;
+    text-align: left;
+    margin-left: -300px;
 }
