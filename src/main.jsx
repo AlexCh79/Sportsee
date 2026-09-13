@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard/index.jsx'
 import Profile from './pages/Profile/index.jsx'
 import Error from './pages/Error/index.jsx'
 import Provider from './context/Provider.jsx'
+import PrivateRoute from './components/PrivateRoute/index.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,8 +17,10 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route element={<Layout />}>
             <Route path='/' element={<Login />} />
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/profile' element={<Profile />} />
+            <Route element={<PrivateRoute />}>
+              <Route path='/dashboard' element={<Dashboard />} />
+              <Route path='/profile' element={<Profile />} />
+            </Route>
             <Route path='*' element={<Error />} />
           </Route>
         </Routes>

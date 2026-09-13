@@ -121,3 +121,9 @@ button {
 footer {
     display: none;
 }
+
+.error-message {
+    color: #E03131;
+    font-size: 13px;
+    margin: -10px 0 0 0;
+}
