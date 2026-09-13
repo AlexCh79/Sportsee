@@ -1,0 +1,22 @@
+.distance-tooltip {
+    background-color: #282D30;
+    border-radius: 5px;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.distance-tooltip-range {
+    color: #FFFFFF;
+    font-size: 11px;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.distance-tooltip-value {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}

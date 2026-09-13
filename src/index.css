@@ -8,8 +8,13 @@
 }
 
 body {
-  width: 1440px;
-  max-width: 100%;
+  max-width: 1440px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {

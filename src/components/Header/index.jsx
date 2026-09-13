@@ -25,11 +25,11 @@ function Header () {
             </div>
             <div className="nav-bar">
                 <nav className="left-nav-bar">
-                    <NavLink to='/dashboard'>Dashboard</NavLink>
-                    <NavLink to='/profile'>Mon profil</NavLink>
+                    <NavLink to='/dashboard' className='link'>Dashboard</NavLink>
+                    <NavLink to='/profile' className='link'>Mon profil</NavLink>
                 </nav>
                 <nav className="right-nav-bar">
-                    <NavLink to='/' onClick={handleLogout}>Se déconnecter</NavLink>
+                    <NavLink to='/' onClick={handleLogout} className='logout'>Se déconnecter</NavLink>
                 </nav>
             </div>
         </header>

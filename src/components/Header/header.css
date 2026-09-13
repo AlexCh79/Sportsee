@@ -4,6 +4,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     font-size: 14px;
+    width: 100%;
 }
 
 .nav-bar {
@@ -25,4 +26,19 @@ header {
 .right-nav-bar {
     color: #0B23F4;
     padding-left: 40px;
+}
+
+.link, .link:visited {
+    color: #111111;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 300ms;
+    &:hover {
+        color: #0B23F4;
+    }
+}
+
+.logout, .logout:visited {
+    color: #0B23F4;
+    text-decoration: none;
 }
