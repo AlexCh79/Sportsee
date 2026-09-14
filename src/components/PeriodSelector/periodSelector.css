@@ -1,0 +1,28 @@
+
+.period-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.period-nav-btn {
+    background-color: #FFFFFF;
+    border: 1px solid #717171;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 24px;
+    width: fit-content;
+    max-height: 24px;
+    height: fit-content;
+    vertical-align: middle;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    place-items: center;
+}
+
+.arrow {
+    vertical-align: middle;
+}

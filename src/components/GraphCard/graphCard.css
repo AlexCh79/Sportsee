@@ -1,0 +1,28 @@
+
+.graph_card {
+    background-color: #FFFFFF;
+    min-width: 445px;
+    max-width: 583px;
+    height: fit-content;
+    max-height: 486px;
+    padding: 16px 40px 24px 40px;
+    border-radius: 10px;
+}
+
+.graph-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.graph-card-value {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.graph-card-legend {
+    padding: 0 0 30px 10px;
+    font-size: 12px;
+    color: #707070;
+}

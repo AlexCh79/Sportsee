@@ -128,58 +128,6 @@
 
 .perf-graph {
     display: flex;
-    flex-direction: row;   
-}
-
-.stat-km {
-    background-color: #FFFFFF;
-    width: fit-content;
-    max-width: 445px;
-    height: fit-content;
-    max-height: 486px;
-    padding: 16px 40px 24px 40px;
-    border-radius: 10px;
-}
-
-.title-graph-km {
-    color: #0B23F4;
-    font-size: 22px;
-    font-weight: 500;
-    margin: 10px;
-}
-
-.legend-graph {
-    margin: 0 0 30px 10px;
-}
-
-.period-selector {
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.period-nav-btn {
-    background-color: #FFFFFF;
-    border: 1px solid #717171;
-    border-radius: 10px;
-    padding: 10px;
-    max-width: 24px;
-    width: fit-content;
-    max-height: 24px;
-    height: fit-content;
-    vertical-align: middle;
-    margin: 0;
-    text-align: center;
-    display: flex;
-    place-items: center;
-}
-
-.arrow {
-    vertical-align: middle;
-}
-
-.title-graph {
-    margin-bottom: 30px;
+    gap: 32px;
 }

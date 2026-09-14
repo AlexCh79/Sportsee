@@ -1,4 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import ChartLegend from "../ChartLegend";
 import './distanceChart.css'
 
 // Création du Tooltip
@@ -42,11 +43,7 @@ function DistanceChart({data}) {
                     tick={{fontSize: 10, fill: '#707070'}}
                 />
                 <Tooltip cursor={false} content={<CustomTooltip />} />
-                <Legend 
-                    iconType="circle"
-                    formatter={() => 'Km'}
-                    align="left"
-                />
+                <Legend content={<ChartLegend />} />
                 <Bar dataKey="km" name="Km" fill="#B6BDFC" radius={4} activeBar={{fill: "#0B23F4"}} />
             </BarChart>
         </ResponsiveContainer>
