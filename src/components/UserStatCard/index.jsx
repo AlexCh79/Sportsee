@@ -1,12 +1,12 @@
 import './userStatCard.css'
 
-function UserStatCard() {
+function UserStatCard({ title, value, unit }) {
     return (
         <div className='stats-card'>
-            <span className='stats-card-title'>Temps total couru</span>
+            <span className='stats-card-title'>{title}</span>
             <div className='stats-card-result'>
-                <span className='stats-card-value'>27</span>
-                <span className='stats-card-unit'>km</span>
+                <span className='stats-card-value'>{value}</span>
+                <span className='stats-card-unit'>{unit}</span>
             </div>
         </div>
     )

@@ -5,6 +5,7 @@ header {
     justify-content: space-between;
     font-size: 14px;
     width: 100%;
+    max-width: 100%;
 }
 
 .nav-bar {

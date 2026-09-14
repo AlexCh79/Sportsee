@@ -28,3 +28,12 @@ export function isSameDay(dateA, dateB) {
         && dateA.getMonth() === dateB.getMonth()
         && dateA.getDate() === dateB.getDate()
 }
+
+export function formatFullDate(date) {
+    return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+}
+
+export function diffInDays(startDate, endDate) {
+    const millisecondsPerDay = 1000 * 60 * 60 * 24
+    return Math.round((endDate - startDate) / millisecondsPerDay)
+}

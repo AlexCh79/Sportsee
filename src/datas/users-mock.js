@@ -6,6 +6,7 @@ export const userMock = [
         profile: {
             firstName: "Sophie",
             lastName: "Martin",
+            gender: "Femme",            
             createdAt: "2025-01-01",
             age: 32,
             weight: 60,
@@ -26,6 +27,7 @@ export const userMock = [
         profile: {
             firstName: "Emma",
             lastName: "Leroy",
+            gender: "Femme",
             createdAt: "2025-01-01",
             age: 28,
             weight: 62,
@@ -46,6 +48,7 @@ export const userMock = [
         profile: {
             firstName: "Marc",
             lastName: "Dubois",
+            gender: "Homme",
             createdAt: "2025-01-01",
             age: 45,
             weight: 85,

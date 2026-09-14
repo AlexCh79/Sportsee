@@ -10,3 +10,11 @@
 .user-stats-row {
     margin-bottom: 30px;
 }
+
+.user-stats-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    place-items: center;
+}
