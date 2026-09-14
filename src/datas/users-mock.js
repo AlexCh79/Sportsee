@@ -16,7 +16,8 @@ export const userMock = [
             totalDistance: "2250.2",
             totalSessions: 348,
             totalDuration: 14625
-        }
+        },
+        weeklyGoal: 2
     },
     {
         id: "user789",
@@ -35,7 +36,8 @@ export const userMock = [
             totalDistance: "3791.4",
             totalSessions: 607,
             totalDuration: 22624
-        }
+        },
+        weeklyGoal: 3
     },
     {
         id: "user456",
@@ -54,6 +56,7 @@ export const userMock = [
             totalDistance: "501.7",
             totalSessions: 130,
             totalDuration: 3555
-        }
+        },
+        weeklyGoal: 2
     }
 ]

@@ -2,7 +2,7 @@ import Context from '../../context/Context'
 import { useContext, useMemo, useState } from 'react'
 import { getWeeklyDistance } from '../../utils/activityStats';
 import DistanceChart from '../../components/Charts/DistanceChart';
-import { formatLongDate } from '../../utils/formats';
+import { formatLongDate } from '../../utils/dateHelpers';
 import HeartRateChart from '../../components/Charts/heartRateChart';
 import GraphCard from '../../components/GraphCard';
 import getDailyHeartRate from '../../utils/heartRateStats';
@@ -109,6 +109,9 @@ function Dashboard() {
 
                 <h4 className='perform-title'>Cette semaine</h4>
                 <span className='week'>du  au  </span>
+                <div className='perf-graph'>
+                    
+                </div>
             </div>
 
 

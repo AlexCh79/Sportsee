@@ -1,20 +1,8 @@
+import { isSameDay, getMonday } from "./dateHelpers"
+
 // Calcul des fréquences cardiaques
 
     const DAY_LABELS = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']
-
-    // Récupération du lundi de la semaine
-    function getMonday(date){
-        const result = new Date(date)
-        const dayIndex = (result.getDay() + 6) / 7
-        result.setDate(result.getDate() - dayIndex)
-        return result
-    }
-
-    function isSameDay(dateA, dateB) {
-        return dateA.getFullYear() === dateB.getFullYear()
-            && dateA.getMonth() === dateB.getMonth()
-            && dateA.getDate() === dateB.getDate()
-    }
 
     function getDailyHeartRate(activities, weekOffset = 0) {
         // Retourne un objet vide si pas d'activité
