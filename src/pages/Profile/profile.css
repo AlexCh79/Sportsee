@@ -1,0 +1,22 @@
+.profile {
+    padding: 0 80px;
+    margin: 0;
+    width: 100%;
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    gap: 57px;
+    place-items: center;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

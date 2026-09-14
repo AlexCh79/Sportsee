@@ -1,0 +1,26 @@
+.user-card {
+    display: flex;
+    flex-direction: row;
+    max-width: 508px;
+    max-height: 165px;
+    height: fit-content;
+    width: 508px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    gap: 24px;
+    padding: 24px 0 24px 32px;
+    place-items: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.createdDate {
+    color: #707070;
+    font-size: 14px;
+    font-weight: 400;
+}

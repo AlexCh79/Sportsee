@@ -11,8 +11,6 @@ import './dashboard.css'
 
 function Dashboard() {
 
-    console.log('Dashboard render')
-
     // Récupération des données utilisateur
     const { user, activity } = useContext(Context);
     const [weekOffset, setWeekOffset] = useState(0);
