@@ -1,0 +1,30 @@
+.week-stat-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 10px 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    width: 572px;
+    height: 103px;
+    max-width: 572px;
+    max-height: 103px;
+}
+
+.week-stat-label {
+    font-size: 14px;
+    color: #707070;
+}
+
+.week-stat-subtitle {
+    font-size: 16px;
+    margin: 10px 0 0 0;
+}
+
+.week-stat-value {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+}

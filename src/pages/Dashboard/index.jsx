@@ -6,9 +6,12 @@ import { formatLongDate } from '../../utils/dateHelpers';
 import HeartRateChart from '../../components/Charts/heartRateChart';
 import GraphCard from '../../components/GraphCard';
 import getDailyHeartRate from '../../utils/heartRateStats';
+import ThisWeek from './sections/ThisWeek';
 import './dashboard.css'
 
 function Dashboard() {
+
+    console.log('Dashboard render')
 
     // Récupération des données utilisateur
     const { user, activity } = useContext(Context);
@@ -106,15 +109,10 @@ function Dashboard() {
                         <HeartRateChart data={heartRateStats.days} />
                     </GraphCard>
                 </div>
-
-                <h4 className='perform-title'>Cette semaine</h4>
-                <span className='week'>du  au  </span>
-                <div className='perf-graph'>
-                    
-                </div>
+                <ThisWeek />
             </div>
 
-
+            
 
         </div>
     )
