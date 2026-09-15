@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import Context from "./Context";
-import { userMock } from "../datas/users-mock";
-import { activitiesMock } from "../datas/activities-mock";
+import { login as loginRequest } from "../services/authService";
+import { fetchUserInfo } from "../services/userService";
+import { setCookie, getCookie, deleteCookie } from "../utils/cookies";
 
 function Provider({children}) {
     const [user, setUser] = useState(null);
-    const [activity, setActivity] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -13,64 +13,56 @@ function Provider({children}) {
     }, []);
 
     /**
-     * Récupération de l'utilisateur connecté et de ses données
+     * Vérification de la connexion en cours de l'utilisateur
      */
-    const loadUser = () => {
-        const id = localStorage.getItem('userId');
+    const loadUser = async () => {
+        const token = getCookie('token');
 
-        if(!id) {
+        if(!token) {
             setIsLoading(false);
             return;
         };
 
-        // Récupération des données de l'utilisateur connecté
-        const foundUser = userMock.find((u) => u.id === id);
-        const foundActivity = activitiesMock.find((a) => a.id === id);
-
-        // Mise à jour des states
-        setUser(foundUser);
-        setActivity(foundActivity);
-        setIsLoading(false);
-    };
-
-    /**
-     * Connexion utilisateur
-     */
-    const login = (username, password) => {
-        const foundUser = userMock.find(
-            (u) => u.username === username && u.password === password
-        )
-
-        // Si pas d'utilisateur correspondant, on retourne false pour erreur
-        if(!foundUser) {
-            return false;
+        // Vérification du token
+        try {
+            const userInfo = await fetchUserInfo()
+            setUser(userInfo)
+        } catch {
+            deleteCookie('token')
+            setUser(null)
+        } finally {
+            setIsLoading(false)
         }
-
-        // Si utilisateur trouvé, on stocke dans le localStorage
-        localStorage.setItem('userId', foundUser.id);
-
-        // Récupération des activités de l'utilisateur
-        const foundActivity = activitiesMock.find(
-            (a) => a.id === foundUser.id
-        )
-
-        setUser(foundUser);
-        setActivity(foundActivity);
-
-        return true;
     }
 
     /**
-     * Déconnexion utilisateur
+     * Connexion utilisateur et intégration du token dans le cookie
+     */
+    const login = async (username, password) => {
+        try {
+            const { token } = await loginRequest(username, password)
+            setCookie('token', token, 1)
+
+            const userInfo = await fetchUserInfo()
+            setUser(userInfo)
+
+            return true
+        } catch {
+            return false
+        }
+
+    }
+
+    /**
+     * Déconnexion utilisateur et nettoyage du cookie
      */
     const logout = () => {
-        localStorage.removeItem('userId');
-        setUser(null);
-        setActivity(null);
+        deleteCookie('token')
+        setUser(null)
     }
 
     return (
-        <Context.Provider value={{user, activity, isLoading, login, loadUser, logout}}>
+        <Context.Provider value={{user, isLoading, login, logout}}>
             {children}
         </Context.Provider>
     );
