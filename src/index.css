@@ -8,11 +8,13 @@
 }
 
 body {
-  max-width: 1440px;
-  width: 100%;
+  max-width: 100%;
+  width: 1440px;
   display: flex;
   flex-direction: column;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
   margin: 0;
   padding: 0;
 }

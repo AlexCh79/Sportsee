@@ -67,7 +67,9 @@ function Dashboard() {
         <div className='dashboard'>
             <div className='dashboard-card-profile'>
                 <div className='left-dashboard-card-profile'>
-                    <img src={user.profile.profilePicture} alt='image de profil' className='profile-photo' />
+                    <div className="banner-photo-wrapper">
+                        <img src={user.profile.profilePicture} alt='image de profil' className='banner-photo' />
+                    </div>
                     <div className='info-profile'>
                         <h4 className='name'>{user.profile.firstName} {user.profile.lastName}</h4>
                         <span className='member-since'>Membre depuis le {memberSince}</span>

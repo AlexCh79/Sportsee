@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    min-height: 100vh;
 }
 
 .left-column {
@@ -12,19 +13,22 @@
     max-width: 632px;
     max-height: 1024px;
     padding: 50px 0;
-    place-items: center;
+    align-items: center;
     right: 0;
+    flex-shrink: 0;
+}
+
+.background-container {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
 }
 
 .background-container img {
-    position: absolute;
-    object-fit: fill;
-    left: 632px;
-    width: 808px;
-    height: 1024px;
-    top: 0;
-    margin: 0;
-    z-index: 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .form-container {
@@ -104,14 +108,15 @@ button {
     max-width: 288px;
     height: fit-content;
     max-height: 62px;
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
     border-radius: 50px;
-    top: 933px;
-    left: 1098px;
+    bottom: 60px;
+    left: 50%;
     z-index: 3;
     margin: 16px;
     text-align: center;
+    transform: translateX(-50%);
 }
 
 .error-message {
@@ -121,7 +126,6 @@ button {
 }
 
 .logo-home {
-    justify-self: left;
-    text-align: left;
-    margin-left: -300px;
+    align-self: left;
+    margin-left: 40px;
 }

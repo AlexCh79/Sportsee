@@ -1,24 +1,27 @@
 .profile {
-    padding: 0 80px;
+    padding: 0 150px;
     margin: 0;
-    width: 100%;
+    width: 1140px;
     max-width: 100%;
-    gap: 32px;
+    gap: 57px;
     display: flex;
     flex-direction: column;
-    place-items: center;
+    align-items: center;
 }
 
 .profile-container {
     display: flex;
     flex-direction: row;
     gap: 57px;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .left-section {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 508px;
+    max-width: 508px;
 }

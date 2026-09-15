@@ -13,7 +13,9 @@ function UserCard() {
 
     return (
         <div className='user-card'>
-            <img src={user.profile.profilePicture} alt='Photo de profil' className='profile-photo' />
+            <div className="profile-photo-wrapper">
+                <img src={user.profile.profilePicture} alt='Photo de profil' className='profile-photo-card' />
+            </div>
             <div className='user-info'>
                 <h4 className='username'>{user.profile.firstName} {user.profile.lastName}</h4>
                 <span className='createdDate'>Membre depuis le {formatFullDate(new Date(user.profile.createdAt))}</span>
