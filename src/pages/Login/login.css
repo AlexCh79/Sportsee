@@ -34,15 +34,16 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    place-items: center;
+    justify-content: center;
+    align-items: center;
     max-width: 398px;
     max-height: 617px;
     width: 398px;
-    height: 617px;
+    height: fit-content;
     background-color: #FFFFFF;
     border-radius: 20px;
-    padding: 40px 40px 80px 40px;
-    margin-top: 55px;
+    padding: 60px 40px 80px 40px;
+    margin: 0;
 }
 
 h3 {
@@ -52,9 +53,10 @@ h3 {
 .login-form {
     display: flex;
     flex-direction: column;
+    align-self: center;
     gap: 24px;
     width: 317px;
-    height: 241px;
+    height: fit-content;
 }
 
 label {
@@ -67,7 +69,7 @@ input {
     max-width: 317px;
     max-height: 58px;
     width: 307px;
-    height: 58px;
+    height: 43px;
     border: 0.5px solid #717171;
     border-radius: 10px;
     padding: 15px 5px;
@@ -126,6 +128,6 @@ button {
 }
 
 .logo-home {
-    align-self: left;
-    margin-left: 40px;
+    align-self: flex-start;
+    margin: 0 0 50px 40px;
 }

@@ -1,6 +1,6 @@
 import UserCard from '../../components/UserCard'
 import ProfileCard from '../../components/ProfileCard'
-import UserStats from '../../components/userStats'
+import UserStats from '../../components/UserStats'
 import './profile.css'
 
 function Profile() {
