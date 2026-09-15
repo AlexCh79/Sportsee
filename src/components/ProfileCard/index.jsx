@@ -4,7 +4,7 @@ import './profileCard.css'
 
 function formatHeight(heightInCm) {
     const meters = Math.floor(heightInCm / 100)
-    const centimeters = heightInCm / 100
+    const centimeters = heightInCm % 100
     return `${meters}m${String(centimeters).padStart(2, '0')}`
 }
 
