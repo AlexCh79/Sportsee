@@ -1,57 +1,58 @@
-import { useContext, useMemo } from "react";
-import Context from "../../../../context/Context";
-import { getWeeklyStats } from "../../../../utils/weeklyStats";
-import { formatMiddleDate } from "../../../../utils/dateHelpers";
-import WeeklyGoalChart from "../../../../components/Charts/WeeklyGoalChart";
-import WeekStatCard from "../../../../components/WeekStatCard";
+import { useContext } from 'react'
+import Context from '../../../../context/Context'
+import { useApiRequest } from '../../../../hooks/useApiRequest'
+import { fetchUserActivity } from '../../../../services/activityService'
+import { getOneWeekRange } from '../../../../utils/weekRange'
+import { summarizeWeek } from '../../../../utils/weeklyStats'
+import { formatShortDate } from '../../../../utils/dateHelpers'
+import WeeklyGoalChart from '../../../../components/Charts/WeeklyGoalChart'
+import WeekStatCard from '../../../../components/WeekStatCard'
 import './thisWeek.css'
 
+// TODO: retirer ce fallback une fois que /api/user-info renverra weeklyGoal pour chaque utilisateur
+const FALLBACK_WEEKLY_GOAL = 3
 
 function ThisWeek() {
-    const { user, activity } = useContext(Context)
+    const { user } = useContext(Context)
+    const currentWeek = getOneWeekRange(0)
 
-    const weekSummary = useMemo(() => {
-        if (!activity) return { sessionsCount: 0, totalDuration: 0, totalDistance: 0, periodStart: null, periodEnd: null }
-        return getWeeklyStats(activity.activities)
-    }, [activity])
+    const { data: activities, isLoading, error } = useApiRequest(
+        () => fetchUserActivity(currentWeek.startWeek, currentWeek.endWeek),
+        [currentWeek.startWeek, currentWeek.endWeek]
+    )
 
-    const periodLabel = weekSummary.periodStart && weekSummary.periodEnd
-        ? `Du ${formatMiddleDate(weekSummary.periodStart)} au ${formatMiddleDate(weekSummary.periodEnd)}`
-        : ''
+    if (!user) return null
+
+    const weeklyGoal = user.weeklyGoal ?? FALLBACK_WEEKLY_GOAL
+    const summary = activities ? summarizeWeek(activities) : { sessionsCount: 0, totalDuration: 0, totalDistance: 0 }
 
     return (
         <div className="this-week">
             <h4 className="section-title">Cette semaine</h4>
-            <span className="this-week-period">{periodLabel}</span>
+            <span className="this-week-period">
+                {`Du ${formatShortDate(currentWeek.startDate)} au ${formatShortDate(currentWeek.endDate)}`}
+            </span>
 
-            <div className="this-week-row">
-                <div className="week-goal-card">
-                    <p className="week-goal-value">
-                        <span className="week-goal-count">x{weekSummary.sessionsCount}</span>{' '}
-                        sur objectif de {user.weeklyGoal}
-                    </p>
-                    <span className="week-goal-subtitle">Courses hebdomadaire réalisées</span>
-                    <WeeklyGoalChart completed={weekSummary.sessionsCount} goal={user.weeklyGoal} />
+            {isLoading && <p className="chart-card-status">Chargement...</p>}
+            {error && <p className="chart-card-status chart-card-error">{error}</p>}
+
+            {!isLoading && !error && (
+                <div className="this-week-row">
+                    <div className="week-goal-card">
+                        <p className="week-goal-value">
+                            <span className="week-goal-count">x{summary.sessionsCount}</span>{' '}
+                            sur objectif de {weeklyGoal}
+                        </p>
+                        <span className="week-goal-subtitle">Courses hebdomadaire réalisées</span>
+                        <WeeklyGoalChart completed={summary.sessionsCount} goal={weeklyGoal} />
+                    </div>
+
+                    <div className="week-stats-column">
+                        <WeekStatCard label="Durée d'activité" value={summary.totalDuration} unit="minutes" color="var(--dark-blue)" paleColor="#9CA3F5" />
+                        <WeekStatCard label="Distance" value={summary.totalDistance} unit="kilomètres" color="#FF0101" paleColor="#FFB4A8" />
+                    </div>
                 </div>
-
-                <div className="week-stats-column">
-                    <WeekStatCard 
-                        label="Durée d'activité"
-                        value={weekSummary.totalDuration}
-                        unit="minutes"
-                        color="var(--dark-blue)"
-                        paleColor='#B6BDFC'
-                    />
-                    <WeekStatCard 
-                        label="Distance"
-                        value={weekSummary.totalDistance}
-                        unit="kilomètres"
-                        color="#F4320B"
-                        paleColor='#FCC1B6'
-                    />
-                </div>
-
-            </div>
+            )}
         </div>
     )
 }
