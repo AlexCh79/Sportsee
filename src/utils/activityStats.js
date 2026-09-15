@@ -1,58 +1,27 @@
-import { formatShortDate } from "./dateHelpers"
+import { formatShortDate } from "./dateHelpers";
 
-// Calcul des moyenne par semaine
+// Calcul des moyennes d'activité en distance parcourue
+export function bucketDistanceByWeek(activities, rangeStart) {
+    const weeksAgoList = [4, 3, 2, 1]
 
-export function getWeeklyDistance(activities, weekOffset = 0) {
+    return weeksAgoList.map((weeksAgo, index) => {
+        const start = new Date(rangeStart)
+        start.setDate(start.getDate() + (4 - weeksAgo) * 7)
 
-    // Retourne un tableau vide pas d'activités
-    if(!activities || activities.length === 0){
-        return { weeks: [], periodStart: null, periodEnd: null, canGoPrevious: false, canGoNext: false }
-    };
+        const end = new Date(start)
+        end.setDate(end.getDate() + 6)
 
-    const dates = activities.map(
-        (activity) => new Date(activity.date)
-    );
+        const totalDistance = activities
+            .filter((activity) => {
+                const activityDate = new Date(activity.date)
+                return activityDate >= start && activityDate <= end
+            })
+            .reduce((sum, activity) => sum + activity.distance, 0)
 
-    const lastestDate = new Date(Math.max(...dates));
-    const earliestDate = new Date(Math.min(...dates))
-
-    const referenceDate = new Date(lastestDate)
-    referenceDate.setDate(referenceDate.getDate() - weekOffset * 28)
-
-    const weeksAgoList = [4, 3, 2, 1];
-
-    const weeks = weeksAgoList.map(
-        (weeksAgo, index) => {
-            const end = new Date(referenceDate)
-            end.setDate(end.getDate() - (weeksAgo - 1) * 7)
-
-            const start = new Date(end)
-            start.setDate(start.getDate() - 6)
-
-            const totalDistance = activities
-                .filter((activity) => {
-                    const activityDate = new Date(activity.date)
-                    return activityDate >= start && activityDate <= end
-                })
-                .reduce((sum, activity) => sum + activity.distance, 0)
-
-            return {
-                week: `S${index + 1}`,
-                km: Math.round(totalDistance * 10) / 10,
-                dateRange: `${formatShortDate(start)} au ${formatShortDate(end)}`,
-                weekStart: start,
-                weekEnd: end,
-            }
-        }) 
-
-    const periodStart = weeks[0].weekStart
-    const periodEnd = weeks[weeks.length - 1].weekEnd
-
-    return {
-        weeks,
-        periodStart,
-        periodEnd,
-        canGoPrevious: earliestDate < periodStart,
-        canGoNext: weekOffset > 0,
-    }
+        return {
+            week: `${index + 1}`,
+            km: Math.round(totalDistance * 10) / 10,
+            dateRange: `${formatShortDate(start)} au ${formatShortDate(end)}`,
+        }
+    })
 }
