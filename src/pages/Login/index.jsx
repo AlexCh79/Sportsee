@@ -12,11 +12,11 @@ function Login() {
     const navigate = useNavigate();
     const {login} = useContext(Context);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         // Envoi des données vers la fonction login
-        const success = login(username, password);
+        const success = await login(username, password);
 
         // Erreur si la fonction login echoue
         if(!success) {
