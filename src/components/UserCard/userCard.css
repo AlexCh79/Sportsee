@@ -12,12 +12,16 @@
     place-items: center;
 }
 
-.profile-photo-card {
-    width: 117px;
-    height: 117px;
-    object-fit: cover;
+.profile-photo-wrapper {
     border-radius: 10px;
-    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.profile-photo-card {
+    display: block;
+    transition: transform 300ms ease;
+    max-width: 104px;
+    max-height: 117px;
 }
 
 .user-info {

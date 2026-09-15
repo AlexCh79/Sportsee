@@ -37,13 +37,15 @@
 }
 
 .banner-photo-wrapper {
-    border-radius: px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .banner-photo {
     display: block;
     transition: transform 300ms ease;
+    max-width: 104px;
+    max-height: 117px;
 }
 
 .banner-photo-wrapper:hover .banner-photo {

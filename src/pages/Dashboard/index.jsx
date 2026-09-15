@@ -39,8 +39,7 @@ function Dashboard() {
             </div>
 
             <div className='perform-board'>
-                <h4 className='perform-title'>Vos dernières performances</h4>
-                <div className='perf-graph'>
+                <div>
                     <LastPerformances />
                 </div>
                 

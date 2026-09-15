@@ -9,6 +9,7 @@ import { formatLongDate } from '../../../../utils/dateHelpers'
 import GraphCard from '../../../../components/GraphCard'
 import DistanceChart from '../../../../components/Charts/DistanceChart'
 import HeartRateChart from '../../../../components/Charts/HeartRateChart'
+import './lastPerformances.css'
 
 function LastPerformances() {
     const { user } = useContext(Context)

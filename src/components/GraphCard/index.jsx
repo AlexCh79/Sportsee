@@ -1,7 +1,7 @@
 import PeriodSelector from '../PeriodSelector'
 import './graphCard.css'
 
-function GraphCard({ headerValue, headerColor, subtitle, periodLabel, onPrevious, onNext, canGoNext, canGoPrevious, isLoading ,children }) {
+function GraphCard({ headerValue, headerColor, subtitle, periodLabel, onPrevious, onNext, canGoNext, canGoPrevious, isLoading, error, children }) {
     return (
         <div className='graph_card'>
             <div className='graph-card-header'>

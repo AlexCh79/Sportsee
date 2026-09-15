@@ -17,7 +17,7 @@ export function getOneWeekRange(weekOffset) {
 
     return {
         startDate: monday,
-        endDate, sunday,
+        endDate: sunday,
         startWeek: toISODate(monday),
         endWeek: toISODate(sunday),
     }
