@@ -26,3 +26,14 @@
     font-size: 12px;
     color: #707070;
 }
+
+.chart-card-status {
+    font-size: 13px;
+    color: #707070;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.chart-card-error {
+    color: #E03131;
+}

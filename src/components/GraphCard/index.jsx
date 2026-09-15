@@ -1,7 +1,7 @@
 import PeriodSelector from '../PeriodSelector'
 import './graphCard.css'
 
-function GraphCard({ headerValue, headerColor, subtitle, periodLabel, onPrevious, onNext, canGoNext, canGoPrevious, children }) {
+function GraphCard({ headerValue, headerColor, subtitle, periodLabel, onPrevious, onNext, canGoNext, canGoPrevious, isLoading ,children }) {
     return (
         <div className='graph_card'>
             <div className='graph-card-header'>
@@ -19,8 +19,9 @@ function GraphCard({ headerValue, headerColor, subtitle, periodLabel, onPrevious
                 )}
             </div>
             {subtitle && <span className='graph-card-legend'>{subtitle}</span>}
-            {children}
-        </div>
+            {isLoading && <p className="chart-card-status">Chargement des données...</p>}
+            {error && <p className="chart-card-status chart-card-error">{error}</p>}
+            {!isLoading && !error && children}        </div>
     )
 }
 
