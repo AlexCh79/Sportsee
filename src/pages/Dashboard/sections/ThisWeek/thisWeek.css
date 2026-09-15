@@ -54,3 +54,11 @@
     flex-direction: column;
     gap: 24px;
 }
+
+.this-week-row > :first-child {
+    flex: 3;
+}
+
+.this-week-row > :last-child {
+    flex: 4;
+}

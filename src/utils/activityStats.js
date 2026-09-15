@@ -19,7 +19,7 @@ export function bucketDistanceByWeek(activities, rangeStart) {
             .reduce((sum, activity) => sum + activity.distance, 0)
 
         return {
-            week: `${index + 1}`,
+            week: `S${index + 1}`,
             km: Math.round(totalDistance * 10) / 10,
             dateRange: `${formatShortDate(start)} au ${formatShortDate(end)}`,
         }

@@ -1,9 +1,7 @@
 
 .graph_card {
     background-color: #FFFFFF;
-    min-width: 445px;
-    max-width: 583px;
-    height: fit-content;
+    height: max-content;
     max-height: 486px;
     padding: 16px 40px 24px 40px;
     border-radius: 10px;
