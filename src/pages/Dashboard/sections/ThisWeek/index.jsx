@@ -4,7 +4,7 @@ import { useApiRequest } from '../../../../hooks/useApiRequest'
 import { fetchUserActivity } from '../../../../services/activityService'
 import { getOneWeekRange } from '../../../../utils/weekRange'
 import { summarizeWeek } from '../../../../utils/weeklyStats'
-import { formatShortDate } from '../../../../utils/dateHelpers'
+import { formatMiddleDate } from '../../../../utils/dateHelpers'
 import WeeklyGoalChart from '../../../../components/Charts/WeeklyGoalChart'
 import WeekStatCard from '../../../../components/WeekStatCard'
 import './thisWeek.css'
@@ -30,7 +30,7 @@ function ThisWeek() {
         <div className="this-week">
             <h4 className="section-title">Cette semaine</h4>
             <span className="this-week-period">
-                {`Du ${formatShortDate(currentWeek.startDate)} au ${formatShortDate(currentWeek.endDate)}`}
+                {`Du ${formatMiddleDate(currentWeek.startDate)} au ${formatMiddleDate(currentWeek.endDate)}`}
             </span>
 
             {isLoading && <p className="chart-card-status">Chargement...</p>}
