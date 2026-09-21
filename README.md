@@ -49,11 +49,11 @@ L'application est disponible sur `http://localhost:5173`.
 
 Trois comptes de test sont fournis par le back-end :
 
-| Utilisateur   | Identifiant    |
-| ------------- | -------------- |
-| Sophie Martin | `sophiemartin` |
-| Emma Leroy    | `emmaleroy`    |
-| Marc Dubois   | `marcdubois`   |
+| Utilisateur   | Identifiant    | Mot de Passe  |
+| ------------- | -------------- | ------------- |
+| Sophie Martin | `sophiemartin` | `password123` |
+| Emma Leroy    | `emmaleroy`    | `password789` |
+| Marc Dubois   | `marcdubois`   | `password456` |
 
 Les mots de passe se trouvent dans le fichier `app/data.json` du back-end.
 
@@ -87,4 +87,4 @@ src/
 - **Requêtes** : le hook `useApiRequest` centralise les états de chargement et d'erreur, et ignore les réponses arrivées après un changement de période pour éviter d'afficher des données périmées.
 - **Survol des graphiques** : les changements de couleur au survol sont gérés en CSS plutôt qu'avec un état React, ce qui évite de re-rendre les graphiques et garde la légende stable.
 - **Logo animé** : le logo du footer est dessiné en SVG et animé en CSS pour reproduire l'animation de la maquette. L'animation est désactivée si l'utilisateur a demandé à réduire les animations (`prefers-reduced-motion`).
-- **Données manquantes** : Si un chammp n'est pas renseigné dans l'API concernant l'utilisateur, les champs non renseignés sont laissés vides sur la page Profil.
+- **Données manquantes** : si l'API ne renvoie pas une information du profil (genre, taille…), le champ est laissé vide sur la page Profil.

@@ -11,7 +11,7 @@ export const userMock = [
             age: 32,
             weight: 60,
             height: 165,
-            profilePicture: "http://localhost:8000/images/sophie.jpg"
+            profilePicture: "/images/sophie.jpg"
         },
         statistics: {
             totalDistance: "2250.2",
@@ -32,7 +32,7 @@ export const userMock = [
             age: 28,
             weight: 62,
             height: 170,
-            profilePicture: "http://localhost:8000/images/emma.jpg"
+            profilePicture: "/images/emma.jpg"
         },
         statistics: {
             totalDistance: "3791.4",
@@ -53,7 +53,7 @@ export const userMock = [
             age: 45,
             weight: 85,
             height: 180,
-            profilePicture: "http://localhost:8000/images/marc.jpg"
+            profilePicture: "/images/marc.jpg"
         },
         statistics: {
             totalDistance: "501.7",
