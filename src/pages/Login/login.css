@@ -12,8 +12,8 @@
     height: 1024px;
     max-width: 632px;
     max-height: 1024px;
-    padding: 50px 0;
-    align-items: center;
+    padding: 55px 0 0 100px;
+    align-items: flex-start;
     right: 0;
     flex-shrink: 0;
 }
@@ -42,12 +42,13 @@
     height: fit-content;
     background-color: #FFFFFF;
     border-radius: 20px;
-    padding: 60px 40px 80px 40px;
+    padding: 40px 40px 80px;
     margin: 0;
 }
 
-h3 {
+.login-form h3 {
     color: #0B23F4;
+    margin-bottom: 16px;
 }
 
 .login-form {
@@ -59,21 +60,23 @@ h3 {
     height: fit-content;
 }
 
-label {
-    color: #707070;
-    font-size: 14px;
-    margin-bottom: 5px;
+.form-field  {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-input {
-    max-width: 317px;
-    max-height: 58px;
-    width: 307px;
-    height: 43px;
+.login-form label {
+    color: #707070;
+    font-size: 14px;
+}
+
+.login-form input {
+    width: 100%;
+    height: 58px;
     border: 0.5px solid #717171;
     border-radius: 10px;
     padding: 15px 5px;
-    margin-top: 0;
     color: #111111;
     font-size: 14px;
     &:focus {
@@ -81,7 +84,7 @@ input {
     }
 }
 
-button {
+.login-form button {
     background-color: #0B23F4;
     color: #E7E7E7;
     font-size: 16px;
@@ -93,7 +96,7 @@ button {
     max-height: 51px;
     height: 51px;
     padding: 20px;
-    margin: 16px 40px 16px 0;
+    margin: 16px 0;
     vertical-align: middle;
     &:hover{
         background-color :#5465F7;
@@ -110,15 +113,13 @@ button {
     max-width: 288px;
     height: fit-content;
     max-height: 62px;
-    padding: 10px 20px;
+    padding: 16px;
     border: none;
     border-radius: 50px;
-    bottom: 60px;
-    left: 50%;
+    bottom: 29px;
+    right: 24px;
     z-index: 3;
-    margin: 16px;
     text-align: center;
-    transform: translateX(-50%);
 }
 
 .error-message {
@@ -128,6 +129,9 @@ button {
 }
 
 .logo-home {
-    align-self: flex-start;
-    margin: 0 0 50px 40px;
+    margin: 0 0 151px 0;
+}
+
+.login-form span {
+    font-size: 14px;
 }

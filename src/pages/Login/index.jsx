@@ -37,10 +37,14 @@ function Login() {
                     <form className="login-form" onSubmit={handleSubmit}>
                         <h3>Transformez vos stats en résultats</h3>
                         <h4>Se connecter</h4>
-                        <label htmlFor="username">Nom d'utilisateur :</label>
-                        <input id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-                        <label htmlFor="password">Mot de passe :</label>
-                        <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <div className="form-field">
+                            <label htmlFor="username">Nom d'utilisateur :</label>
+                            <input id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        </div>
+                        <div className="form-field">
+                            <label htmlFor="password">Mot de passe :</label>
+                            <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </div>
                         {error && <p className="error-message">{error}</p>}
                         <button className="blue-btn" type="submit">Se connecter</button>
                         <span>Mot de passe oublié ?</span>
