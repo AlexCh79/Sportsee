@@ -15,7 +15,7 @@ function HeartRateChart({data}) {
     const [isHovered, setIsHovered] = useState(false)
 
     return (
-        <ResponsiveContainer width="100%" height={307}>
+        <ResponsiveContainer width="100%" height="100%">
             <ComposedChart data={data} barGap={4} barCategoryGap="25%" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                 <CartesianGrid vertical={false} horizontal={true} stroke="#E0E0E0" strokeDasharray="3 3" />
                 <XAxis 
@@ -30,6 +30,7 @@ function HeartRateChart({data}) {
                         (dataMax) => Math.ceil((dataMax + 5) / 5) * 5
                     ]}
                     axisLine={false}
+                    width={30}
                     tickLine={false}
                     tick={{fontSize: 12, fill: '#707070'}}
                 />

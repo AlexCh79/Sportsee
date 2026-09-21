@@ -1,12 +1,13 @@
 header {
-    margin: 35px 0;
+    margin: 35px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    justify-self: center;
     font-size: 14px;
     width: 1140px;
     max-width: 100%;
-    padding: 0 150px;
+    padding: 0;
 }
 
 .nav-bar {

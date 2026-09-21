@@ -1,27 +1,26 @@
 .user-card {
     display: flex;
     flex-direction: row;
-    max-width: 508px;
-    max-height: 165px;
-    height: 117px;
-    width: 468px;
+    width: 100%;
     background-color: #FFFFFF;
     border-radius: 10px;
     gap: 24px;
-    padding: 24px 20px;
-    place-items: center;
+    padding: 24px 32px;
+    align-items: center;
 }
 
 .profile-photo-wrapper {
+    flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .profile-photo-card {
     display: block;
+    object-fit: cover;
     transition: transform 300ms ease;
-    max-width: 104px;
-    max-height: 117px;
+    width: 104px;
+    height: 117px;
 }
 
 .user-info {

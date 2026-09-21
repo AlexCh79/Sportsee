@@ -23,7 +23,8 @@ function UserStats() {
 
     if (!user) return null
 
-    const totalHours = Math.round(user.statistics.totalDuration / 60)
+    const totalHours = Math.floor(user.statistics.totalDuration / 60)
+    const totalMinutes = user.statistics.totalDuration % 60
 
     const totalCalories = activities
         ? activities.reduce((sum, session) => sum + session.caloriesBurned, 0)
@@ -45,7 +46,7 @@ function UserStats() {
 
             {!isLoading && !error && (
                 <div className="user-stats-cards">
-                    <UserStatCard title="Temps total couru" value={totalHours} unit="heures" />
+                    <UserStatCard title="Temps total couru" value={`${totalHours}h`} unit={`${totalMinutes}min`} />
                     <UserStatCard title="Distance totale" value={user.statistics.totalDistance} unit="km" />
                     <UserStatCard title="Nombre de séances" value={user.statistics.totalSessions} unit="séances" />
                     <UserStatCard title="Calories brûlées" value={totalCalories} unit="kcal" />

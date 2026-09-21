@@ -26,3 +26,8 @@
 .arrow {
     vertical-align: middle;
 }
+
+.period-selector span {
+    font-size: 12px;
+    white-space: nowrap;
+}

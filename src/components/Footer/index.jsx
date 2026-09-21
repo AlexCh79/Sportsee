@@ -1,16 +1,17 @@
 import './footer.css'
+import AnimatedLogo from '../AnimatedLogo';
 
 function Footer() {
     return (    
         <footer>
             <div className="left-footer">
-                <span>&copy; Sportsee</span>
+                <span>&copy;Sportsee</span>
                 <span>Tous droits réservés</span>
             </div>
             <div className="right-footer">
                 <span>Conditions générales</span>
                 <span>Contact</span>
-                <img src="/favicon.png" alt="" className="icon" />
+                <AnimatedLogo />
             </div>
         </footer>
     );

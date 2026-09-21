@@ -22,11 +22,11 @@ function CustomTooltip({ active, payload }) {
 
 function DistanceChart({data}) {
     return (
-        <ResponsiveContainer width="100%" height={307}>
+        <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data} barSize={14}>
                 <CartesianGrid
                     vertical={false}
-                    horizontal={true}
+                    horizontal={false}
                     stroke="#E0E0E0"
                     strokeDasharray="3 3"
                 />
@@ -34,6 +34,7 @@ function DistanceChart({data}) {
                     dataKey="week"
                     axisLine={{ stroke: '#717171' }}
                     tickLine={false}
+                    width={30}
                     tick={{fontSize: 12, fill: '#707070'}}
                 />
                 <YAxis

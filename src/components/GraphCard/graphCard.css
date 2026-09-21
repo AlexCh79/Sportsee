@@ -1,10 +1,13 @@
 
 .graph_card {
     background-color: #FFFFFF;
-    height: max-content;
-    max-height: 486px;
+    height: 484px;
+    max-height: 484px;
     padding: 16px 40px 24px 40px;
+    object-fit: fill;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .graph-card-header {
@@ -16,11 +19,13 @@
 .graph-card-value {
     font-size: 22px;
     font-weight: 500;
-    margin: 10px;
+    margin: 0;
+    white-space: nowrap;
 }
 
 .graph-card-legend {
-    padding: 0 0 30px 10px;
+    display: block;
+    margin-top: 8px;
     font-size: 12px;
     color: #707070;
 }
@@ -34,4 +39,14 @@
 
 .chart-card-error {
     color: #E03131;
+}
+
+.graph-card-header-container {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.graph-card-body {
+    flex: 1;
+    min-height: 0;
 }
