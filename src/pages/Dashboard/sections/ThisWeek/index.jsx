@@ -49,7 +49,7 @@ function ThisWeek() {
 
                     <div className="week-stats-column">
                         <WeekStatCard label="Durée d'activité" value={summary.totalDuration} unit="minutes" color="var(--dark-blue)" paleColor="#9CA3F5" />
-                        <WeekStatCard label="Distance" value={summary.totalDistance} unit="kilomètres" color="#FF0101" paleColor="#FFB4A8" />
+                        <WeekStatCard label="Distance" value={summary.totalDistance} unit="kilomètres" color="#F4320B" paleColor="#FFB4A8" />
                     </div>
                 </div>
             )}

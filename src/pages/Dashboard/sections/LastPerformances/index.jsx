@@ -75,7 +75,7 @@ function LastPerformances() {
 
                 <GraphCard
                     headerValue={`${averageBPM} BPM`}
-                    headerColor="#FF0101"
+                    headerColor="#F4320B"
                     subtitle="Fréquence cardiaque moyenne"
                     periodLabel={`${formatLongDate(heartRange.startDate)} - ${formatLongDate(heartRange.endDate)}`}
                     onPrevious={() => setHeartWeekOffset((prev) => prev + 1)}

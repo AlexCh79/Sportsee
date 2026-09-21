@@ -45,15 +45,16 @@ function WeeklyGoalChart({ completed, goal }) {
     ]
 
     return (
-        <PieChart width={320} height={260}>
+        <PieChart width={370} height={228} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
             <Pie
                 data={data}
                 dataKey="value"
-                cx={160}
-                innerRadius={45}
-                outerRadius={85}
-                startAngle={90}
-                endAngle={-270}
+                cx={198}
+                cy={134}
+                innerRadius={41}
+                outerRadius={82}
+                startAngle={0}
+                endAngle={-360}
                 stroke='none'
                 label={renderLabel}
                 labelLine={false}

@@ -1,6 +1,6 @@
 .distance-tooltip {
-    background-color: #282D30;
-    border-radius: 5px;
+    background-color: #111111;
+    border-radius: 8px;
     padding: 12px 18px;
     display: flex;
     flex-direction: column;
@@ -19,4 +19,12 @@
     font-size: 18px;
     font-weight: 600;
     margin: 0;
+}
+
+.distance-chart .recharts-bar-rectangle path {
+    transition: fill 300ms ease;
+}
+
+.distance-chart:hover .recharts-bar-rectangle path {
+    fill: #0B23F4;
 }

@@ -25,6 +25,7 @@
     padding: 0 52px;
     background: linear-gradient(#FFFFFF 0%, #FFFFFF 100%);
     justify-self: center;
+    box-shadow: var(--card-shadow);
 }
 
 .left-dashboard-card-profile {

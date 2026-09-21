@@ -11,6 +11,7 @@
     height: 103px;
     max-width: 572px;
     max-height: 103px;
+    box-shadow: var(--card-shadow);
 }
 
 .week-stat-label {

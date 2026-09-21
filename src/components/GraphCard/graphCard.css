@@ -3,11 +3,13 @@
     background-color: #FFFFFF;
     height: 484px;
     max-height: 484px;
+    min-width: 0;
     padding: 16px 40px 24px 40px;
     object-fit: fill;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    box-shadow: var(--card-shadow);
 }
 
 .graph-card-header {

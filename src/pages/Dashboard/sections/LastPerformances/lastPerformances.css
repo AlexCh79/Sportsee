@@ -5,11 +5,10 @@
     height: 484px;
 }
 
-
 .performance-row > :first-child {
-    flex: 3;
+    flex: 0 0 445px;
 }
 
 .performance-row > :last-child {
-    flex: 4;
+    flex: 1;
 }

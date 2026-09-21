@@ -1,0 +1,8 @@
+.heart-rate-chart .recharts-line-curve {
+    stroke: #F2F3FF;
+    transition: stroke 300ms ease;
+}
+
+.heart-rate-chart:hover .recharts-line-curve {
+    stroke: #0B23F4;
+}

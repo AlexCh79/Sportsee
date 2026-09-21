@@ -1,5 +1,4 @@
 import { ComposedChart, Bar, XAxis, YAxis, CartesianGrid, Legend, ResponsiveContainer, Line } from "recharts";
-import { useState } from "react";
 import ChartLegend from "../ChartLegend";
 import './heartRateChart.css'
 
@@ -12,15 +11,13 @@ const LEGEND_LABELS = {
 
 function HeartRateChart({data}) {
 
-    const [isHovered, setIsHovered] = useState(false)
-
     return (
-        <ResponsiveContainer width="100%" height="100%">
-            <ComposedChart data={data} barGap={4} barCategoryGap="25%" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <ResponsiveContainer width="100%" height="100%" className="heart-rate-chart">
+            <ComposedChart data={data} barGap={4} barCategoryGap="25%">
                 <CartesianGrid vertical={false} horizontal={true} stroke="#E0E0E0" strokeDasharray="3 3" />
                 <XAxis 
                     dataKey="day"
-                    axisLine={{stroke: '#DEDEDE'}}
+                    axisLine={{stroke: '#717171'}}
                     tickLine={false}
                     tick={{fontSize: 12, fill:'#707070'}}
                 />
@@ -29,7 +26,7 @@ function HeartRateChart({data}) {
                         (dataMin) => Math.floor((dataMin - 5) / 5) * 5,
                         (dataMax) => Math.ceil((dataMax + 5) / 5) * 5
                     ]}
-                    axisLine={false}
+                    axisLine={{ stroke: '#717171' }}
                     width={30}
                     tickLine={false}
                     tick={{fontSize: 12, fill: '#707070'}}
@@ -41,7 +38,7 @@ function HeartRateChart({data}) {
                     type="monotone"
                     dataKey="average"
                     name="average"
-                    stroke={isHovered ? "#0B23F4" : "#F2F3FF"}
+                    stroke="#0B23F4"
                     strokeWidth={2}
                     dot={{r: 4, fill: '#0B23F4', strokeWidth:0 }}
                     connectNulls

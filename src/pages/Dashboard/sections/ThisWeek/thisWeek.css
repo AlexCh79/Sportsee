@@ -18,17 +18,18 @@
 
 .this-week-row {
     display: flex;
-    gap: 24px;
+    gap: 30px;
 }
 
 .week-goal-card {
     background-color: #FFFFFF;
-    border-radius: 20px;
-    padding: 24px;
-    flex: 1;
+    border-radius: 10px;
+    padding: 24px 40px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    height: 342px;
+    box-shadow: var(--card-shadow)
 }
 
 .week-goal-value {
@@ -50,16 +51,15 @@
 }
 
 .week-stats-column {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .this-week-row > :first-child {
-    flex: 3;
+    flex: 0 0 450px;
 }
 
 .this-week-row > :last-child {
-    flex: 4;
+    flex: 1;
 }
